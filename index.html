@@ -1,13 +1,117 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
+    <title>Kana's Weather App</title>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link href="src/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/f401fd4e03.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
+
   <body>
-    <script src="script.js"></script>
+    <div class="container">
+      <form class="row g-3">
+        <div class="row justify-content-center">
+          <div class="col-auto">
+            <input
+              type="text"
+              id="search-input"
+              class="form-control-lg search-bar"
+              placeholder="Example: London"
+            />
+          </div>
+          <div class="col-auto">
+            <button type="submit" class="btn mb-3 btn-lg btn-primary">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </div>
+      </form>
+      <button
+        class="btn mb-3 btn-lg btn-secondary"
+        id="search-current-location"
+      >
+        Search Current Location
+      </button>
+      <br />
+      <h1 id="city-name">Search a city...</h1>
+      <h2><span id="country-name"></span></h2>
+      <h2 id="current-date"></h2>
+      <div class="ring">
+        <h3>
+          <span id="current-temperature"> </span>
+          <span id="celcius-fahrenheit-display" class="celcius, fahrenheit">
+            <a id="celcius-fahrenheit" href="#">°C</a>
+          </span>
+        </h3>
+        <h4>
+          <span id="current-weather-conditions"></span>
+        </h4>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-5 days">Tuesday</div>
+            <div class="col-3 weather-icons">🌥</div>
+            <div class="col-4 temperature">
+              <strong> 21° </strong>
+              / 11°
+            </div>
+
+            <div class="col-5 days">Wednesday</div>
+            <div class="col-3 weather-icons">🌥</div>
+            <div class="col-4 temperature">
+              <strong> 21° </strong>
+              / 12°
+            </div>
+
+            <div class="col-5 days">Thursday</div>
+            <div class="col-3 weather-icons">
+              🌧
+              <span class="rain-stats"> 40% </span>
+            </div>
+            <div class="col-4 temperature">
+              <strong> 19° </strong>
+              / 15°
+            </div>
+
+            <div class="col-5 days">Friday</div>
+            <div class="col-3 weather-icons">☁️</div>
+            <div class="col-4 temperature">
+              <strong> 20° </strong>
+              / 13°
+            </div>
+
+            <div class="col-5 days">Saturday</div>
+            <div class="col-3 weather-icons">☀️</div>
+            <div class="col-4 temperature">
+              <strong> 22° </strong>
+              / 14°
+            </div>
+            <div class="col-5 days">Sunday</div>
+            <div class="col-3 weather-icons">☀️</div>
+            <div class="col-4 temperature">
+              <strong> 23° </strong>
+              / 12°
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <br />
+      <small> Coded by Kana Higashino </small>
+    </div>
+
+    <script src="src/index.js"></script>
   </body>
 </html>
