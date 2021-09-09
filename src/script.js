@@ -92,3 +92,7 @@ celciusFahrenheitLink.addEventListener("click", convertTemperatureUnit);
 
 let currentLocationButton = document.querySelector("#search-current-location");
 currentLocationButton.addEventListener("click", displayCurrentLocationWeather);
+
+//changing the icon element for the current weather
+let currentWeatherIconElement = document.querySelector("#current-weather-icon");
+currentWeatherIconElement.setAttribute("src", ) =

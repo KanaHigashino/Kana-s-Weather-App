@@ -31,7 +31,40 @@
           </div>
           <div class="col-auto">
             <button type="submit" class="btn mb-3 btn-lg btn-primary">
-              <i class="fas fa-search"></i>
+              <svg
+                class="search-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                x="0px"
+                y="0px"
+                width="40"
+                height="40"
+                viewBox="0 0 172 172"
+                style="fill: #000000"
+              >
+                <g
+                  fill="none"
+                  fill-rule="nonzero"
+                  stroke="none"
+                  stroke-width="1"
+                  stroke-linecap="butt"
+                  stroke-linejoin="miter"
+                  stroke-miterlimit="10"
+                  stroke-dasharray=""
+                  stroke-dashoffset="0"
+                  font-family="none"
+                  font-weight="none"
+                  font-size="none"
+                  text-anchor="none"
+                  style="mix-blend-mode: normal"
+                >
+                  <path d="M0,172v-172h172v172z" fill="none"></path>
+                  <g fill="#ffffff">
+                    <path
+                      d="M72.24,10.32c-32.33062,0 -58.48,26.14938 -58.48,58.48c0,32.33063 26.14938,58.48 58.48,58.48c11.54281,0 22.22563,-3.38625 31.2825,-9.1375l42.2475,42.2475l14.62,-14.62l-41.71,-41.6025c7.49813,-9.83625 12.04,-22.02406 12.04,-35.3675c0,-32.33062 -26.14937,-58.48 -58.48,-58.48zM72.24,24.08c24.76531,0 44.72,19.95469 44.72,44.72c0,24.76531 -19.95469,44.72 -44.72,44.72c-24.76531,0 -44.72,-19.95469 -44.72,-44.72c0,-24.76531 19.95469,-44.72 44.72,-44.72z"
+                    ></path>
+                  </g>
+                </g>
+              </svg>
             </button>
           </div>
         </div>
@@ -55,10 +88,11 @@
         </h3>
         <h4>
           <b
-            ><span
+            ><div
               class="current-weather-conditions"
               id="current-weather-conditions"
-            ></span>
+            ></div>
+            <div class="current-weather-icons" id="current-weather-icon"></div>
           </b>
         </h4>
       </div>
@@ -67,14 +101,24 @@
         <div class="card-body">
           <div class="row">
             <div class="col-5 days">Tuesday</div>
-            <div class="col-3 weather-icons">🌥</div>
+            <div class="col-3 weather-icons">
+              <img
+                class="partly-cloudy-day-icon"
+                src="https://img.icons8.com/color/40/000000/partly-cloudy-day--v1.png"
+              />
+            </div>
             <div class="col-4 temperature">
               <strong> 21° </strong>
               / 11°
             </div>
 
             <div class="col-5 days">Wednesday</div>
-            <div class="col-3 weather-icons">🌥</div>
+            <div class="col-3 weather-icons">
+              <img
+                class="partly-cloudy-day-icon"
+                src="https://img.icons8.com/color/40/000000/partly-cloudy-day--v1.png"
+              />
+            </div>
             <div class="col-4 temperature">
               <strong> 21° </strong>
               / 12°
@@ -83,11 +127,12 @@
             <div class="col-5 days">Thursday</div>
             <div class="col-3 weather-icons">
               <svg
+                class="windy-icon"
                 xmlns="http://www.w3.org/2000/svg"
                 x="0px"
                 y="0px"
-                width="30"
-                height="30"
+                width="35"
+                height="35"
                 viewBox="0 0 226 226"
                 style="fill: #000000"
               >
@@ -123,20 +168,129 @@
             </div>
 
             <div class="col-5 days">Friday</div>
-            <div class="col-3 weather-icons">☁️</div>
+            <div class="col-3 weather-icons">
+              <svg
+                class="cloudy-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                x="0px"
+                y="0px"
+                width="40"
+                height="40"
+                viewBox="0 0 172 172"
+                style="fill: #000000"
+              >
+                <g
+                  fill="none"
+                  fill-rule="nonzero"
+                  stroke="none"
+                  stroke-width="1"
+                  stroke-linecap="butt"
+                  stroke-linejoin="miter"
+                  stroke-miterlimit="10"
+                  stroke-dasharray=""
+                  stroke-dashoffset="0"
+                  font-family="none"
+                  font-weight="none"
+                  font-size="none"
+                  text-anchor="none"
+                  style="mix-blend-mode: normal"
+                >
+                  <path d="M0,172v-172h172v172z" fill="none"></path>
+                  <g fill="#95a5a6">
+                    <path
+                      d="M105.70833,43c-16.82167,0 -30.45833,13.63666 -30.45833,30.45833c0,16.82167 13.63666,30.45833 30.45833,30.45833c16.82167,0 30.45833,-13.63666 30.45833,-30.45833c0,-16.82167 -13.63666,-30.45833 -30.45833,-30.45833z"
+                    ></path>
+                    <path
+                      d="M132.58333,78.44992c-13.85314,0 -25.08333,11.23019 -25.08333,25.08333c0,13.85314 11.23019,25.08333 25.08333,25.08333c13.85314,0 25.08333,-11.23019 25.08333,-25.08333c0,-13.85314 -11.23019,-25.08333 -25.08333,-25.08333zM39.41667,78.83333c-13.85314,0 -25.08333,11.23019 -25.08333,25.08333c0,13.85314 11.23019,25.08333 25.08333,25.08333c13.85314,0 25.08333,-11.23019 25.08333,-25.08333c0,-13.85314 -11.23019,-25.08333 -25.08333,-25.08333z"
+                    ></path>
+                    <path
+                      d="M62.70833,53.75c-12.86363,0 -23.29167,10.42803 -23.29167,23.29167c0,12.86363 10.42803,23.29167 23.29167,23.29167c12.86363,0 23.29167,-10.42803 23.29167,-23.29167c0,-12.86363 -10.42803,-23.29167 -23.29167,-23.29167z"
+                    ></path>
+                    <path
+                      d="M89.58333,71.28325c-13.85314,0 -25.08333,11.23019 -25.08333,25.08333c0,13.85314 11.23019,25.08333 25.08333,25.08333c13.85314,0 25.08333,-11.23019 25.08333,-25.08333c0,-13.85314 -11.23019,-25.08333 -25.08333,-25.08333z"
+                    ></path>
+                    <path
+                      d="M25.08333,114.66667c0,7.91558 6.41775,14.33333 14.33333,14.33333h89.58333c7.91558,0 14.33333,-6.41775 14.33333,-14.33333v-3.58333c0,-7.91558 -6.41775,-14.33333 -14.33333,-14.33333h-89.58333c-7.91558,0 -14.33333,6.41775 -14.33333,14.33333z"
+                    ></path>
+                  </g>
+                </g>
+              </svg>
+            </div>
             <div class="col-4 temperature">
               <strong> 20° </strong>
               / 13°
             </div>
 
             <div class="col-5 days">Saturday</div>
-            <div class="col-3 weather-icons">☀️</div>
+            <div class="col-3 weather-icons">
+              <svg
+                class="cloudy-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                x="0px"
+                y="0px"
+                width="40"
+                height="40"
+                viewBox="0 0 172 172"
+                style="fill: #000000"
+              >
+                <g
+                  fill="none"
+                  fill-rule="nonzero"
+                  stroke="none"
+                  stroke-width="1"
+                  stroke-linecap="butt"
+                  stroke-linejoin="miter"
+                  stroke-miterlimit="10"
+                  stroke-dasharray=""
+                  stroke-dashoffset="0"
+                  font-family="none"
+                  font-weight="none"
+                  font-size="none"
+                  text-anchor="none"
+                  style="mix-blend-mode: normal"
+                >
+                  <path d="M0,172v-172h172v172z" fill="none"></path>
+                  <g>
+                    <path
+                      d="M105.70833,17.91667c-16.82167,0 -30.45833,13.63666 -30.45833,30.45833c0,16.82167 13.63666,30.45833 30.45833,30.45833c16.82167,0 30.45833,-13.63666 30.45833,-30.45833c0,-16.82167 -13.63666,-30.45833 -30.45833,-30.45833z"
+                      fill="#95a5a6"
+                    ></path>
+                    <path
+                      d="M132.58333,53.36658c-13.85314,0 -25.08333,11.23019 -25.08333,25.08333c0,13.85314 11.23019,25.08333 25.08333,25.08333c13.85314,0 25.08333,-11.23019 25.08333,-25.08333c0,-13.85314 -11.23019,-25.08333 -25.08333,-25.08333zM39.41667,53.75c-13.85314,0 -25.08333,11.23019 -25.08333,25.08333c0,13.85314 11.23019,25.08333 25.08333,25.08333c13.85314,0 25.08333,-11.23019 25.08333,-25.08333c0,-13.85314 -11.23019,-25.08333 -25.08333,-25.08333z"
+                      fill="#95a5a6"
+                    ></path>
+                    <path
+                      d="M62.70833,28.66667c-12.86363,0 -23.29167,10.42803 -23.29167,23.29167c0,12.86363 10.42803,23.29167 23.29167,23.29167c12.86363,0 23.29167,-10.42803 23.29167,-23.29167c0,-12.86363 -10.42803,-23.29167 -23.29167,-23.29167z"
+                      fill="#95a5a6"
+                    ></path>
+                    <path
+                      d="M89.58333,46.19992c-13.85314,0 -25.08333,11.23019 -25.08333,25.08333c0,13.85314 11.23019,25.08333 25.08333,25.08333c13.85314,0 25.08333,-11.23019 25.08333,-25.08333c0,-13.85314 -11.23019,-25.08333 -25.08333,-25.08333z"
+                      fill="#95a5a6"
+                    ></path>
+                    <path
+                      d="M25.08333,89.58333c0,7.91558 6.41775,14.33333 14.33333,14.33333h89.58333c7.91558,0 14.33333,-6.41775 14.33333,-14.33333v-3.58333c0,-7.91558 -6.41775,-14.33333 -14.33333,-14.33333h-89.58333c-7.91558,0 -14.33333,6.41775 -14.33333,14.33333z"
+                      fill="#95a5a6"
+                    ></path>
+                    <g fill="#52baff">
+                      <path
+                        d="M125.2375,133.12083c-4.05633,4.05992 -10.63533,4.05992 -14.69525,0c-4.0635,-4.05275 -4.05992,-10.63892 0,-14.69167c4.05992,-4.05992 22.04108,-7.34583 22.04108,-7.34583c0,0 -3.2895,17.98833 -7.34583,22.0375zM85.82083,147.45417c-4.05633,4.05633 -10.63533,4.05633 -14.69525,0c-4.05992,-4.05992 -4.05633,-10.63892 0,-14.69525c4.05992,-4.05992 22.04467,-7.34583 22.04467,-7.34583c0,0 -3.29308,17.99192 -7.34942,22.04108zM49.9875,133.12083c-4.05633,4.05992 -10.63533,4.05992 -14.69525,0c-4.05992,-4.05275 -4.05633,-10.63892 0,-14.69167c4.05633,-4.05992 22.04108,-7.34583 22.04108,-7.34583c0,0 -3.2895,17.98833 -7.34583,22.0375z"
+                      ></path>
+                    </g>
+                  </g>
+                </g>
+              </svg>
+            </div>
             <div class="col-4 temperature">
               <strong> 22° </strong>
               / 14°
             </div>
             <div class="col-5 days">Sunday</div>
-            <div class="col-3 weather-icons">☀️</div>
+            <div class="col-3 weather-icons">
+              <img
+                class="sunny-icon"
+                src="https://img.icons8.com/color/40/000000/sun--v1.png"
+              />
+            </div>
             <div class="col-4 temperature">
               <strong> 23° </strong>
               / 12°
