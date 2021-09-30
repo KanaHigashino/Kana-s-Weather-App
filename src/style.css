@@ -126,10 +126,16 @@ a:visited {
 .current-weather-conditions {
   display: block;
   margin: 0 auto;
-  color: rgb(105, 105, 105);
   font-size: 50px;
+  color: black;
 }
 
+.wind-speed {
+  display: block;
+  margin: 0 auto;
+  color: rgb(105, 105, 105);
+  font-size: 30px;
+}
 .card {
   border: none;
   background: rgb(255, 255, 255);
