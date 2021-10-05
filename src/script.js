@@ -38,8 +38,14 @@ function displayWeatherCondition(response) {
   let windElement = document.querySelector("#wind-speed");
   windElement.innerHTML = Math.round(response.data.wind.speed) + ` mph`;
 
-  let iconElement = document.querySelector("#current-weather-icon");
-  iconElement.setAttribute(
+  let iconElementOne = document.querySelector("#current-weather-icon-1");
+  iconElementOne.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+
+  let iconElementTwo = document.querySelector("#current-weather-icon-2");
+  iconElementTwo.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
@@ -65,28 +71,28 @@ function displaySearch(event) {
 let searchForm = document.querySelector("form");
 searchForm.addEventListener("submit", displaySearch);
 
-//bonus feature (change temperature units)
-function convertTemperatureUnit(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#current-temperature");
-  let currentTemperature = temperatureElement.innerHTML;
-  currentTemperature = Number(currentTemperature);
-  let celciusFahrenheitDisplay = document.querySelector(
-    "#celcius-fahrenheit-display"
-  );
-
-  if (celciusFahrenheitLink.innerHTML === "°C") {
-    temperatureElement.innerHTML = Math.round(
-      (currentTemperature * 9) / 5 + 32
-    );
-    celciusFahrenheitLink.innerHTML = "°F";
-  } else {
-    celciusFahrenheitLink.innerHTML = "°C";
-    temperatureElement.innerHTML = Math.round(
-      ((currentTemperature - 32) * 5) / 9
-    );
-  }
-}
+//feature 3 (change temperature units) - currently removed temporarily
+//function convertTemperatureUnit(event) {
+//  event.preventDefault();
+//  let temperatureElement = document.querySelector("#current-temperature");
+//  let currentTemperature = temperatureElement.innerHTML;
+//  currentTemperature = Number(currentTemperature);
+//  let celciusFahrenheitDisplay = document.querySelector(
+//    "#celcius-fahrenheit-display"
+//  );
+//
+//  if (celciusFahrenheitLink.innerHTML === "°C") {
+//  temperatureElement.innerHTML = Math.round(
+//     (currentTemperature * 9) / 5 + 32
+//    );
+//    celciusFahrenheitLink.innerHTML = "°F";
+//  } else {
+//    celciusFahrenheitLink.innerHTML = "°C";
+//    temperatureElement.innerHTML = Math.round(
+//      ((currentTemperature - 32) * 5) / 9
+//    );
+//  }
+//}
 
 function searchLocation(position) {
   let apiKey = "b3cdc73b2c038da1d3ef502745783d38";
@@ -107,7 +113,7 @@ celciusFahrenheitLink.addEventListener("click", convertTemperatureUnit);
 let currentLocationButton = document.querySelector("#search-current-location");
 currentLocationButton.addEventListener("click", displayCurrentLocationWeather);
 
-//the forecast
+//feature 4 (the 6 day forecast)
 
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
