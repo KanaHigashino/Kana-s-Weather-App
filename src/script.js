@@ -72,27 +72,27 @@ let searchForm = document.querySelector("form");
 searchForm.addEventListener("submit", displaySearch);
 
 //feature 3 (change temperature units) - currently removed temporarily
-//function convertTemperatureUnit(event) {
-//  event.preventDefault();
-//  let temperatureElement = document.querySelector("#current-temperature");
-//  let currentTemperature = temperatureElement.innerHTML;
-//  currentTemperature = Number(currentTemperature);
-//  let celciusFahrenheitDisplay = document.querySelector(
-//    "#celcius-fahrenheit-display"
-//  );
-//
-//  if (celciusFahrenheitLink.innerHTML === "°C") {
-//  temperatureElement.innerHTML = Math.round(
-//     (currentTemperature * 9) / 5 + 32
-//    );
-//    celciusFahrenheitLink.innerHTML = "°F";
-//  } else {
-//    celciusFahrenheitLink.innerHTML = "°C";
-//    temperatureElement.innerHTML = Math.round(
-//      ((currentTemperature - 32) * 5) / 9
-//    );
-//  }
-//}
+function convertTemperatureUnit(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#current-temperature");
+  let currentTemperature = temperatureElement.innerHTML;
+  currentTemperature = Number(currentTemperature);
+  let celciusFahrenheitDisplay = document.querySelector(
+    "#celcius-fahrenheit-display"
+  );
+
+  if (celciusFahrenheitLink.innerHTML === "°C") {
+    temperatureElement.innerHTML = Math.round(
+      (currentTemperature * 9) / 5 + 32
+    );
+    celciusFahrenheitLink.innerHTML = "°F";
+  } else {
+    celciusFahrenheitLink.innerHTML = "°C";
+    temperatureElement.innerHTML = Math.round(
+      ((currentTemperature - 32) * 5) / 9
+    );
+  }
+}
 
 function searchLocation(position) {
   let apiKey = "b3cdc73b2c038da1d3ef502745783d38";
